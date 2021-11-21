@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author create by lx_068
  * HttpClient
  */
-public class HttpClientDemo {
+public class HttpClientUtils {
 
     private static final String URL = "https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html";
     public static CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -36,7 +36,7 @@ public class HttpClientDemo {
 
     public static void main(String[] args) throws Exception {
 
-        String text = HttpClientDemo.getAsString(URL);
+        String text = HttpClientUtils.getAsString(URL);
         System.out.println("url: " + URL + " ; response: \n" + text);
     }
 }
