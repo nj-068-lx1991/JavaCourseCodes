@@ -1,5 +1,7 @@
-package com.geekuniversity.demo;
+package com.geekuniversity.client;
 
+
+import java.io.IOException;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -7,38 +9,33 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
-
 /**
- * @author Created by lx_068
- * HttpClient 访问服务器地址
+ * @author create by lx_068
+ * HttpClient
  */
-public class HttpClient {
-
-    public final static String URL = "http://127.0.0.1:8801/hello.html";
+public class HttpClientDemo {
+    public static final String URL = "http://127.0.0.1:8801/hello.html";
     public static CloseableHttpClient httpclient = HttpClients.createDefault();
 
-    /**
-     * GET 调用
-     *
-     * @param url 路径
-     * @return java.lang.String
-     * @throws IOException 流异常
-     */
     public static String getAsString(String url) throws IOException {
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response1 = httpclient.execute(httpGet);
+
+        String var4;
         try {
             System.out.println(response1.getStatusLine());
             HttpEntity entity1 = response1.getEntity();
-            return EntityUtils.toString(entity1, "UTF-8");
+            var4 = EntityUtils.toString(entity1, "UTF-8");
         } finally {
             response1.close();
         }
+
+        return var4;
     }
 
     public static void main(String[] args) throws Exception {
-        String text = HttpClient.getAsString(URL);
-        System.out.println("url: " + URL + " ; response: \n" + text);
+        String text = getAsString(URL);
+        System.out.println("url:" + URL + "response: \n" + text);
     }
 }
+
