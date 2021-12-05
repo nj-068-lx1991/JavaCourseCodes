@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.geekuniversity.framework.code8.school.SchoolAutoConfiguration
