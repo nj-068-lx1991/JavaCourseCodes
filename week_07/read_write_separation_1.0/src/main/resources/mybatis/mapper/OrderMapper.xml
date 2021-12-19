@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.database.entity.OrderMapper" >
+    <resultMap id="BaseResultMap" type="com.example.demo.week06.OrderEntity" >
+        <result column="order_id" property="order_id" jdbcType="BIGINT" />
+        <result column="order_code" property="order_code" jdbcType="BIGINT" />
+        <result column="customer_id" property="customer_id" jdbcType="INT" />
+        <result column="shipping_user" property="shipping_user" jdbcType="VARCHAR(10)" />
+        <result column="province" property="province" jdbcType="SMALLINT"/>
+        <result column="city" property="city" jdbcType="SMALLINT"/>
+        <result column="district" property="district" jdbcType="SMALLINT"/>
+        <result column="address" property="address" jdbcType="VARCHAR(100)"/>
+        <result column="payment_method" property="payment_method" jdbcType="TINYINT"/>
+        <result column="order_amount" property="order_amount" jdbcType="DECIMAL(19, 2)"/>
+        <result column="district_amount" property="district_amount" jdbcType="DECIMAL(19, 2)"/>
+        <result column="payment_amount" property="payment_amount" jdbcType="DECIMAL(19, 2)"/>
+        <result column="pay_time" property="pay_time" jdbcType="DATETIME"/>
+        <result column="order_status" property="order_status" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        order_id, order_code, customer_id, shipping_user, province, city, district, address, payment_method, order_amount,
+         district_amount, payment_amount, pay_time, order_status
+    </sql>
+
+    <insert id="insertOne" parameterType="com.example.demo.database.entity.OrderEntity" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO geek_db.order
+        (order_code, customer_id, shipping_user, province, city, district, address, payment_method, order_amount,
+         district_amount, payment_amount, pay_time, order_status)
+        VALUES
+        (#{order_code}, #{customer_id}, #{shipping_user}, #{province}, #{city}, #{district}, #{address}, #{payment_method},
+         #{order_amount}, #{district_amount}, #{payment_amount}, #{pay_time}, #{order_status})
+    </insert>
+
+    <insert id="insertMany" parameterType="list" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO geek_db.order
+        (order_code, customer_id, shipping_user, province, city, district, address, payment_method, order_amount,
+        district_amount, payment_amount, pay_time, order_status)
+        VALUES
+        <foreach collection="list" item="item" separator="," >
+            (#{order_code}, #{customer_id}, #{shipping_user}, #{province}, #{city}, #{district}, #{address}, #{payment_method},
+            #{order_amount}, #{district_amount}, #{payment_amount}, #{pay_time}, #{order_status})
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        delete from geek_db.order where order_id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.demo.database.entity.OrderEntity">
+        UPDATE geek_db.order
+        SET
+        <trim suffixOverrides="," suffix="WHERE id = #{id}">
+            <if test="order_code != null">order_code = #{order_code},</if>
+            <if test="customer_id != null">customer_id = #{customer_id},</if>
+            <if test="shipping_user != null">shipping_user = #{shipping_user},</if>
+            <if test="province != null">province = #{province},</if>
+            <if test="city != null">city = #{city},</if>
+            <if test="district != null">district = #{district},</if>
+            <if test="address != null">district = #{district},</if>
+            <if test="payment_method != null">payment_method = #{payment_method},</if>
+            <if test="order_amount != null">order_amount = #{order_amount},</if>
+            <if test="district_amount != null">district_amount = #{district_amount},</if>
+            <if test="payment_amount != null">payment_amount = #{payment_amount},</if>
+            <if test="pay_time != null">pay_time = #{pay_time},</if>
+            <if test="order_status != null">order_status = #{order_status},</if>
+        </trim>
+    </update>
+
+    <select id="query" resultType="HashMap" parameterType="HashMap">
+        select <include refid="Base_Column_List" /> from test.orders
+        <trim prefix="WHERE" prefixOverrides="AND |OR ">
+            <if test="order_id != null">
+                order_id = #{order_id}
+            </if>
+            <if test="order_code != null">
+                order_code = #{order_code}
+            </if>
+            <if test="customer_id != null">
+                and customer_id = #{customer_id}
+            </if>
+            <if test="shipping_user != null">
+                and shipping_user = #{shipping_user}
+            </if>
+            <if test="province != null">
+                and province = #{province}
+            </if>
+            <if test="city != null">
+                and city = #{city}
+            </if>
+            <if test="district != null">
+                and district = #{district}
+            </if>
+            <if test="address != null">
+                and address = #{address}
+            </if>
+            <if test="payment_method != null">
+                and payment_method = #{payment_method}
+            </if>
+
+            <if test="order_amount != null">
+                and payment_method = #{payment_method}
+            </if>
+            <if test="district_amount != null">
+                and payment_method = #{payment_method}
+            </if>
+            <if test="payment_amount != null">
+                and payment_amount = #{payment_amount}
+            </if>
+            <if test="pay_time != null">
+                and pay_time = #{pay_time}
+            </if>
+            <if test="order_status != null">
+                and order_status = #{order_status}
+            </if>
+        </trim>
+    </select>
+
+</mapper>

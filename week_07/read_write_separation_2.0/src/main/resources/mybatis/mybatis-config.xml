@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="order_id" type="java.lang.Integer" />
+        <typeAlias alias="order_code" type="java.lang.Integer" />
+        <typeAlias alias="customer_id" type="java.lang.Integer" />
+        <typeAlias alias="shipping_user" type="java.lang.String" />
+        <typeAlias alias="province" type="java.lang.Integer" />
+        <typeAlias alias="city" type="java.lang.Integer" />
+        <typeAlias alias="district" type="java.lang.Integer" />
+        <typeAlias alias="address" type="java.lang.String" />
+        <typeAlias alias="payment_method" type="java.lang.Integer" />
+        <typeAlias alias="order_amount" type="java.lang.Double" />
+        <typeAlias alias="district_amount" type="java.lang.Doublep" />
+        <typeAlias alias="payment_amount" type="java.lang.Double" />
+        <typeAlias alias="pay_time" type="java.util.Date" />
+        <typeAlias alias="order_status" type="java.lang.Integer" />
+    </typeAliases>
+</configuration>
