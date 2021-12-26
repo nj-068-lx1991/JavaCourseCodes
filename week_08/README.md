@@ -243,7 +243,7 @@
 
 ### 作业 6（必做）：（基于hmily TCC或ShardingSphere的Atomikos XA实现一个简单的分布式 事务应用demo（二选一）。
 
-* learn-spring-data-mutiple-transaction
+* learn-spring-data-transaction
 
 * 代码片段
 
