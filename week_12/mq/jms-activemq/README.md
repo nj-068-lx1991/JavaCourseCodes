@@ -1,7 +1,7 @@
 # Activemq Jms 简单示例
 ***
 ## 简介
-&ensp;&ensp;&ensp;&ensp;简单的 Activemp JMS 示例代码
+&ensp;&ensp;&ensp;&ensp;简单的 Activemq JMS 示例代码
 
 ### activemq 运行
 &ensp;&ensp;&ensp;&ensp;简单使用docker启动一个：
@@ -24,7 +24,7 @@ docker run -dit --name mq -p 11616:61616 -p 8161:8161 rmohr/activemq
         <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example.jms.activemq</groupId>
+    <groupId>com.example.jms.activemp</groupId>
     <artifactId>jms-activemp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jms-activemp</name>
