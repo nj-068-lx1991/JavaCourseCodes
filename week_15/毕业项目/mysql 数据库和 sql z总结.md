@@ -195,3 +195,8 @@ query_cache_type= 1
 
 表示开启查询缓冲区。只有在查询语句中包含SQL_NO_CACHE关键字时，才不会使用查询缓冲区。
 可以使用 FLUSH QUERY CACHE; 语句来刷新缓冲区，清理查询缓 冲区中的碎片。
+
+
+[mysql 脑图](https://github.com/nj-068-lx1991/JavaCourseCodes/blob/master/week_15/%E6%AF%95%E4%B8%9A%E9%A1%B9%E7%9B%AE/mysql.png)
+
+[sql 脑图](https://github.com/nj-068-lx1991/JavaCourseCodes/blob/master/week_15/%E6%AF%95%E4%B8%9A%E9%A1%B9%E7%9B%AE/sql.jpg)

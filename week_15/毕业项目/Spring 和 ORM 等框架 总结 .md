@@ -84,3 +84,6 @@
 	  也可以使用spring的对hibernate操作的封装
 	5）Spring AOP 切面编程
 	6）SpringEE spring 对javaEE其他模块的支持
+	
+	
+[Spring和ORM等框架脑图](https://github.com/nj-068-lx1991/JavaCourseCodes/blob/master/week_15/%E6%AF%95%E4%B8%9A%E9%A1%B9%E7%9B%AE/Spring%20%E6%A1%86%E6%9E%B6.png)
